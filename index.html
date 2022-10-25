@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description"
+		content="Visor del Observatorio Territorial Godoy Cruz, el cual permite la visualización de información geográfica del municipio. Oficina de Planificación Urbana">
+	<meta name="keywords"
+		content="Godoy Cruz, Planificación Urbana, Secretaria de Ambiente y Desarrollo Sustentable, Visor, Observatorio Territorial">
+	<meta name="author" content="IgnacioDiaz - FernandoCruceño">
+	<meta name="copyright" content="Observatorio Territorial Godoy Cruz">
+	<title>ObservatorioTerritorialGC</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-33KRTS12JB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-33KRTS12JB');
+	</script>
+
+	<link rel="shortcut icon" type="image/x-icon" href="./img/favicon1.png">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css">
+	<link rel="stylesheet" href="css/Leaflet.PolylineMeasure.css">
+	<link rel="stylesheet" href="css/Leaflet.StreetViewButtons.css">
+	<link rel="stylesheet" href="css/Leaflet.StreetView1Buttons.css">
+	<link rel="stylesheet" href="css/leaflet.groupedlayercontrol.min.css">
+	<link rel="stylesheet" href="css/Control.Coordinates.css">
+	<link rel="stylesheet" href="css/L.Control.MousePosition.css">
+
+	<!-- SCRIPTS -->
+	<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"></script>  
+	<script src="https://unpkg.com/togeojson@0.16.0"></script>
+	<script src="scripts/Leaflet.PolylineMeasure.js"></script>
+	<script src="scripts/StreetViewButtons.js"></script>
+	<script src="scripts/StreetView1Buttons.js"></script>
+	<script src="scripts/leaflet.pattern.js"></script>
+	<script src="scripts/leaflet-tilelayer-wmts.js"></script>
+	<script src="scripts/leaflet.groupedlayercontrol.min.js"></script>
+	<script src="scripts/leaflet.browser.print.js"></script>
+	<script src="scripts/leaflet.filelayer.js"></script>
+	<script src="scripts/Control.Coordinates.js"></script>
+	<script src="scripts/L.Control.MousePosition.js"></script>
+	<script src="js/popups.js"></script>
+	<script src="js/iconos.js"></script>
+
+	<!-- GEOJSON -->
+	<script type="text/javascript" src="scripts/ZonaLey4886.js"></script>
+	<script type="text/javascript" src="scripts/Mastiles.js"></script>
+	<script type="text/javascript" src="scripts/MastilesPublicos.js"></script>
+	<script type="text/javascript" src="scripts/Edificios.js"></script>
+	<script type="text/javascript" src="scripts/Puntoswifi.js"></script>
+	<script type="text/javascript" src="scripts/Persianas.js"></script>
+	<script type="text/javascript" src="scripts/Barrios.js"></script>
+	<script type="text/javascript" src="scripts/SitiosyConjuntosEdilicios.js"></script>
+	<script type="text/javascript" src="scripts/TramosyCarriles.js"></script>
+	<script type="text/javascript" src="scripts/Esculturas.js"></script>
+	<script type="text/javascript" src="scripts/Centrosdesalud.js"></script>
+	<script type="text/javascript" src="scripts/godoycruz.js"></script>
+	<script type="text/javascript" src="scripts/CicloviasExistentes.js"></script>
+	<script type="text/javascript" src="scripts/ClinicasPrivadas.js"></script>
+	<script type="text/javascript" src="scripts/Hospital.js"></script>
+	<script type="text/javascript" src="scripts/Escuelas.js"></script>
+	<script type="text/javascript" src="scripts/Farmacias.js"></script>
+	<script type="text/javascript" src="scripts/ResidenciasAdultosMayores.js"></script>
+	<script type="text/javascript" src="scripts/JardinesMunicipales.js"></script>
+	<script type="text/javascript" src="scripts/Polideportivos.js"></script>
+	<script type="text/javascript" src="scripts/Seguridad.js"></script>
+	<script type="text/javascript" src="scripts/Reservorios.js"></script>
+	<script type="text/javascript" src="scripts/BarriosPopulares.js"></script>
+	<script type="text/javascript" src="scripts/Zonificacion.js"></script>
+	<script type="text/javascript" src="scripts/BarriosConsolidados.js"></script>
+	<script type="text/javascript" src="scripts/RedesdeAguas.js"></script>
+	<script type="text/javascript" src="scripts/SistemaCloacal.js"></script>
+	<script type="text/javascript" src="scripts/LineasD.js"></script>
+	<script type="text/javascript" src="scripts/LineaMunicipal.js"></script>
+	<script type="text/javascript" src="scripts/Cuencashidrograficas.js"></script>
+	<script type="text/javascript" src="scripts/LineasT.js"></script>
+	<script type="text/javascript" src="scripts/CanalesColectoresHijuelas.js"></script>
+	<script type="text/javascript" src="scripts/PuntosRecepcionPilas.js"></script>
+	<script type="text/javascript" src="scripts/PuntosVerdes.js"></script>
+	<script type="text/javascript" src="scripts/EspaciosVerdes.js"></script>
+	<script type="text/javascript" src="scripts/DependenciasMunicipales.js"></script>
+	<script type="text/javascript" src="scripts/Solmaforos.js"></script>
+	<script type="text/javascript" src="scripts/EstacionesdeServicio.js"></script>
+	<script type="text/javascript" src="scripts/Estaciones.js"></script>
+	<script type="text/javascript" src="scripts/Ripieras.js"></script>
+	<script type="text/javascript" src="scripts/ZonaNatural.js"></script>
+	<script type="text/javascript" src="scripts/ZonaUrbana.js"></script>
+	<script type="text/javascript" src="scripts/LimiteUrbano.js"></script>
+	<script type="text/javascript" src="scripts/DistritosDepartamentales.js"></script>
+	<script type="text/javascript" src="scripts/PlantaRecicladora.js"></script>
+	<script type="text/javascript" src="scripts/Bancos.js"></script>
+	<script type="text/javascript" src="scripts/Cajeros.js"></script>
+	<script type="text/javascript" src="scripts/Pagofacil.js"></script>
+	<script type="text/javascript" src="scripts/Bodegas.js"></script>
+	<script type="text/javascript" src="scripts/Informador.js"></script>
+	<script type="text/javascript" src="scripts/PuestosBici.js"></script>
+	<script type="text/javascript" src="scripts/Fallas.js"></script>
+	<script type="text/javascript" src="scripts/Inundacion.js"></script>
+	<script type="text/javascript" src="scripts/Suelo.js"></script>
+	<script type="text/javascript" src="scripts/RedHidrica.js"></script>
+	<script type="text/javascript" src="scripts/PanelesSolares.js"></script>
+	<script type="text/javascript" src="scripts/InfoAmbiente.js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias Proyectadas (DAMI II).js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias Proyectadas (Municipalidad).js"></script>
+	<script type="text/javascript" src="scripts/Metrotranvia.js"></script>
+	<script type="text/javascript" src="scripts/ParadasMetrotranvia.js"></script>
+	<script type="text/javascript" src="scripts/GranjaSolar.js"></script>
+	<script type="text/javascript" src="scripts/SenderoGeologico.js"></script>
+	<script type="text/javascript" src="scripts/ParadasSendero.js"></script>
+	<script type="text/javascript" src="scripts/cafe.js"></script>
+	<script type="text/javascript" src="scripts/Aventura.js"></script>
+	<script type="text/javascript" src="scripts/Hospedajes.js"></script>
+	<script type="text/javascript" src="scripts/Spa.js"></script>
+	<script type="text/javascript" src="scripts/Heladerias.js"></script>
+	<script type="text/javascript" src="scripts/Bares.js"></script>
+	<script type="text/javascript" src="scripts/Restaurantes.js"></script>
+	<script type="text/javascript" src="scripts/Incubadora.js"></script>
+	<script type="text/javascript" src="scripts/UnionesVecinales.js"></script>
+	<script type="text/javascript" src="scripts/VasoInundacionMaure.js"></script>
+	<script type="text/javascript" src="scripts/SubcuencasMaure.js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias en Ejecucion (DAMI II).js"></script>
+	<script type="text/javascript" src="scripts/Ciclovias en Ejecucion (Municipalidad).js"></script>
+	<script type="text/javascript" src="scripts/Puestos.js"></script>
+	<script type="text/javascript" src="scripts/CieneguitaTrancas.js"></script>
+	<script type="text/javascript" src="scripts/TrancasIgnacio.js"></script>
+	<script type="text/javascript" src="scripts/Diques.js"></script>
+	<script type="text/javascript" src="scripts/Canales.js"></script>
+	<script type="text/javascript" src="scripts/EspaciosVerdes2.js"></script>
+	<script type="text/javascript" src="scripts/Hipermercados.js"></script>
+	<script type="text/javascript" src="scripts/Supermercados.js"></script>
+	<script type="text/javascript" src="scripts/Museos.js"></script>
+	<script type="text/javascript" src="scripts/Teatro.js"></script>
+	<script type="text/javascript" src="scripts/Biblioteca.js"></script>
+	<script type="text/javascript" src="scripts/Culto.js"></script>
+
+</head>
+
+<header>
+
+	<style>
+		.leaflet-container {
+			display: flex;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			font-size: 12px;
+		}
+
+		.leaflet-control-attribution.leaflet-control {
+			font-family: 'Playfair Display', serif;
+			font-size: 15px;
+		}
+
+		.leaflet-control-attribution.leaflet-control a:hover {
+			color: #800080;
+		}
+	</style>
+
+	<h1>Nodos Participativos</h1>
+	<img src="img/favicon.png" height="auto" width="45px" class="logogc">
+	<div id="map"></div>
+	<div id="referencias">
+		<div class="icono_referencia" id="ref_cicloDami">Ciclovias Proyectadas DAMI II:<br>6,24 Km.</div> <b>
+			<div class="icono_referencia" id="ref_cicloEjec">Ciclovias en Ejecución DAMI II:</br>10,19 Km.</div>
+		</b>
+		<div class="icono_referencia" id="ref_cicloviasexist">Ciclovias Existentes:</br>43,04 Km.</div>
+		</b>
+	</div>
+
+	<!-- PAGINA OBSERVATORIO -->
+	<div><abbr title="Conozca el proyecto Piedemonte"><a
+				href="https://sites.google.com/view/observatorio-territorial/piedemonte?authuser=0" target="_blank"><img
+					src="img/favicon2.png" height="57px" width="256px" aling=right class="logoobserv"></abbr></div>
+
+</header>
+
+<body>
+
+	<!-- FUNCIONES LEAFLET -->
+	<script>
+		/* ARGENMAP */
+		var mapabase_argenmap = new L.TileLayer.WMTS('https://wms.ign.gob.ar/geoserver/capabaseargenmap/gwc/service/wmts?', {
+			layer: 'capabaseargenmap',
+			style: "normal",
+			tilematrixSet: "EPSG:3857",
+			format: "image/png",
+			attribution: " <a href='https://www.ign.gob.ar/AreaServicios/Argenmap/IntroduccionV2'> IGN - Argenmap v2 </a> | <a href='https://www.godoycruz.gob.ar/'>Secretaria de Ambiente y Desarrollo Sustentable - Godoy Cruz</a> | <a href='https://github.com/mylen/leaflet.TileLayer.WMTS'>GitHub</a>&copy "
+		});
+
+
+		/* BASE LAYERS */
+		var esriUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+			esriAttrib = "Powered by &copy <a href='https://www.esri.com/en-us/home'> ESRI </a> | <a href='https://www.godoycruz.gob.ar/'>Secretaría de Ambiente y Desarrollo Sustentable - Godoy Cruz</a>",
+			mapabase_esri = L.tileLayer(esriUrl, {
+				maxZoom: 20,
+				attribution: esriAttrib
+			});
+
+		var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			mapabase_osm = L.tileLayer(osmUrl, {
+				maxZoom: 20,
+				attribution: osmAttrib
+			});
+
+		var otUrl = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+			otAttrib =
+			'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+			mapabase_ot = L.tileLayer(otUrl, {
+				maxZoom: 20,
+				attribution: otAttrib
+			});
+
+
+		/* OVERLAYS Y GRUPOS */
+		var plazagc = L.marker([-32.92524, -68.84439]).bindPopup('Plaza GC.').openPopup(),
+			centrosdesalud = L.geoJson(centrosdesalud, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+			edificios = L.geoJson(Edificios, {
+				pointToLayer: crearIconoedi,
+				onEachFeature: agregarPopuppatrimoniales
+			}),
+			mastil = L.geoJson(Mastiles, {
+				pointToLayer: crearIconoMast,
+				onEachFeature: agregarPopupmasti
+			}),
+			mastilp = L.geoJson(MastilesPublicos, {
+				pointToLayer: crearIconoMastp,
+				onEachFeature: agregarPopupmasti
+			}),
+			SyCE = L.geoJson(SitiosyConjuntosEdilicios, {
+				pointToLayer: crearIconositios,
+				onEachFeature: agregarPopuppatrimoniales
+			}),
+			TyC = L.geoJson(TramosyCarriles, {
+				onEachFeature: agregarPopuppatrimoniales
+			}).setStyle({
+				color: "#C35918"
+			}),
+			barrios = L.geoJson(Barrios, {
+				onEachFeature: agregarPopuppatrimoniales
+			}).setStyle({
+				color: "#E86211",
+				fillOpacity: 0.75
+			}),
+			escultura = L.geoJson(Esculturas, {
+				pointToLayer: crearIconoEscul,
+				onEachFeature: agregarPopupesculturas
+			}),
+			godoycruz = L.geoJson(godoycruz),
+			puntoswifi = L.geoJson(Puntoswifi, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopuppuntorecepcionpilas
+			}),
+			persianas = L.geoJson(Persianas, {
+				pointToLayer: crearIconoPersi,
+				onEachFeature: agregarPopuppersianas
+			}),
+			cicloMuni = L.geoJson(CicloviasProyectadasMuni, {
+				onEachFeature: agregarPopupciclovias
+			}).setStyle({
+				color: "yellow"
+			}),
+			cicloDami = L.geoJson(CicloviasProyectadasDami, {
+				onEachFeature: agregarPopupciclovias
+			}).setStyle({
+				color: "orange"
+			}),
+			cicloviasexist = L.geoJson(CicloviasExistentes, {
+				onEachFeature: agregarPopupciclovias
+			}).setStyle({
+				color: "red"
+			}),
+			cicloEjec = L.geoJson(CicloviasenEjecucionDami, {
+				onEachFeature: agregarPopupciclovias
+			}).setStyle({
+				color: "#03db5d"
+			}),
+			muniEjec = L.geoJson(CicloviasenEjecucionMuni, {
+				onEachFeature: agregarPopupciclovias
+			}).setStyle({
+				color: "#17fff3"
+			}),
+			lineasd = L.geoJson(LineasD, {
+				onEachFeature: agregarPopuplineas
+			}).setStyle({
+				color: "orange"
+			}),
+			lineasmun = L.geoJson(LineaMunicipal, {
+				onEachFeature: agregarPopuplineasMu
+			}).setStyle({
+				color: "orange"
+			}),
+			lineast = L.geoJson(LineasT, {
+				onEachFeature: agregarPopuplineas
+			}).setStyle({
+				color: "red"
+			}),
+			CanalesColectoresHijuelas = L.geoJson(CanalesColectoresHijuelas, {
+				onEachFeature: agregarPopupCanalesColectoresHijuelas
+			}).setStyle({
+				color: "#1a6eeb"
+			}),
+			clinicaspriv = L.geoJson(ClinicasPrivadas, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupSalud
+			}),
+			hospital = L.geoJson(Hospital, {
+				pointToLayer: crearIconoAsistencia,
+				onEachFeature: agregarPopupHospital
+			}),
+			escuelas = L.geoJson(Escuelas, {
+				pointToLayer: crearIconoEnseñanza,
+				onEachFeature: agregarPopupescuelas
+			}),
+			farmacias = L.geoJson(Farmacias, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupfarmaciasgc
+			}),
+			polideportivos = L.geoJson(Polideportivos, {
+				pointToLayer: crearIconoEsparcimiento,
+				onEachFeature: agregarPopupSalud
+			}),
+			jardinesmuni = L.geoJson(JardinesMunicipales, {
+				pointToLayer: crearIconoEnseñanza,
+				onEachFeature: agregarPopupjardinesmuni
+			}),
+			seguridad = L.geoJson(Seguridad, {
+				pointToLayer: crearIconoSeguridad,
+				onEachFeature: agregarPopupSalud
+			}),
+			residenciasad = L.geoJson(ResidenciasAdultosMayores, {
+				pointToLayer: crearIconoNaranja,
+				onEachFeature: agregarPopupSalud
+			}),
+			barriospopulares = L.geoJson(BarriosPopulares, {
+				onEachFeature: agregarPopupbarrios
+			}).setStyle({
+				color: "#f2d119",
+				fillOpacity: 0.75
+			}),
+			reservorios = L.geoJson(Reservorios, {
+				onEachFeature: agregarPopupres
+			}).setStyle({
+				color: "#729b6f",
+				fillOpacity: 0.75
+			}),
+			zonificacion = L.geoJson(Zonificacion, {
+				onEachFeature: agregarPopupzoni
+			}),
+			zonaley = L.geoJson(ZonaLey4886, {
+				onEachFeature: agregarPopupzonaLey4886
+			}),
+			BarriosConsolidados = L.geoJson(BarriosConsolidados, {
+				onEachFeature: agregarPopupBarriosConsolidados
+			}),
+			redesagua = L.geoJson(RedesdeAguas, {
+				onEachFeature: agregarPopupredes
+			}),
+			/* espverdes = L.geoJson(EspaciosVerdes, {
+				onEachFeature: agregarPopupespaciosverdes
+			}).setStyle({
+				color: "#4daf4a",
+				fillOpacity: 0.75
+			}), */
+			cuencas = L.geoJson(Cuencashidrograficas, {
+				onEachFeature: agregarPopupcuencas
+			}),
+			puntospilas = L.geoJson(PuntosRecepcionPilas, {
+				pointToLayer: crearIconoPilas,
+				onEachFeature: agregarPopuppuntorecepcionpilas
+			}),
+			depen = L.geoJson(DependenciasMunicipales, {
+				pointToLayer: crearIconoOficina,
+				onEachFeature: agregarPopupSalud
+			}),
+			punt = L.geoJson(PuntosVerdes, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupPuntos
+			}),
+			solma = L.geoJson(Solmaforos, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			estacion = L.geoJson(EstacionesdeServicio, {
+				pointToLayer: crearIconoAzul,
+				onEachFeature: agregarPopupPV
+			}),
+			meteo = L.geoJson(Estaciones, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupPV
+			}),
+			ripieras = L.geoJson(Ripieras, {
+				onEachFeature: agregarPopupfarmacias
+			}).setStyle({
+				color: "#e31a1c",
+				fillOpacity: 0.75
+			}),
+			zonatu = L.geoJson(ZonaNatural, {
+				onEachFeature: agregarPopupPiedemonte
+			}).setStyle({
+				color: "#e31a1c",
+				fillOpacity: 0.75
+			}),
+			zonaurb = L.geoJson(ZonaUrbana, {
+				onEachFeature: agregarPopupPiedemonte
+			}).setStyle({
+				color: "#e2e21a",
+				fillOpacity: 0.75
+			}),
+			limiurb = L.geoJson(LimiteUrbano, {
+				onEachFeature: agregarPopupfarmacias
+			}).setStyle({
+				color: "red"
+			}),
+			Depa = L.geoJson(DistritosDepartamentales, {
+				onEachFeature: agregarPopupDistritosDepartamentales
+			}),
+			recic = L.geoJson(PlantaRecicladora, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupres
+			}),
+			bank = L.geoJson(Bancos, {
+				pointToLayer: crearIconoOficina,
+				onEachFeature: agregarPopupSalud
+			}),
+			caja = L.geoJson(Cajeros, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupbarrios
+			}),
+			cobro = L.geoJson(Pagofacil, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupbarrios
+			}),
+			bode = L.geoJson(Bodegas, {
+				pointToLayer: crearIconoRojo,
+				onEachFeature: agregarPopupturismo
+			}),
+			informador = L.geoJson(Informador, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupturismo
+			}),
+			bicicleta = L.geoJson(PuestosBici, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupturismo
+			}),
+			fall = L.geoJson(Fallas, {
+				onEachFeature: agregarPopupfallas
+			}).setStyle({
+				color: "orange"
+			}),
+			inundacion = L.geoJson(Inundacion, {
+				onEachFeature: agregarPopupbarrios
+			}),
+			suelo = L.geoJson(Suelo, {
+				onEachFeature: agregarPopup
+			}),
+			hidrico = L.geoJson(RedHidrica, {
+				onEachFeature: agregarPopup
+			}).setStyle({
+				color: "#15c8f0"
+			}),
+			paneles = L.geoJson(PanelesSolares, {
+				pointToLayer: crearIconoPanel,
+				onEachFeature: agregarPopupPaneles
+			}),
+			metro = L.geoJson(Metrotranvia, {
+				onEachFeature: agregarPopupfarmacias
+			}),
+			paradasMetro = L.geoJson(ParadasMetro, {
+				pointToLayer: crearIconoServicios,
+				onEachFeature: agregarPopupbarrios
+			}),
+			granjaSolar = L.geoJson(GranjaSolar, {
+				onEachFeature: agregarPopupbarrios
+			}).setStyle({
+				color: "#e37e12",
+				fillOpacity: 0.75
+			}),
+			sistcloacal = L.geoJson(SistemaCloacal, {
+				onEachFeature: agregarPopupcloacas
+			}),
+			sendGeo = L.geoJson(SenderoGeologico, {
+				onEachFeature: agregarPopupfarmacias
+			}),
+			bar = L.geoJson(Bares, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupGastronomia
+			}),
+			resto = L.geoJson(Restaurantes, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupGastronomia
+			}),
+			cafe = L.geoJson(cafe, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupGastronomia
+			}),
+			hela = L.geoJson(Heladerias, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupGastronomia
+			}),
+			ave = L.geoJson(Aventura, {
+				pointToLayer: crearIconoAzul,
+				onEachFeature: agregarPopupGastronomia2
+			}),
+			hospe = L.geoJson(Hospedajes, {
+				pointToLayer: crearIconoAmarillo,
+				onEachFeature: agregarPopupGastronomia2
+			}),
+			spa = L.geoJson(Spa, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopupGastronomia2
+			}),
+			incu = L.geoJson(Incubadora, {
+				pointToLayer: crearIconoVerde,
+				onEachFeature: agregarPopup
+			}),
+			union = L.geoJson(UnionesVecinales, {
+				pointToLayer: crearIconoEsparcimiento,
+				onEachFeature: agregarPopupPV
+			}),
+			maure = L.geoJson(VasoInundacionMaure, {
+				onEachFeature: agregarPopupfarmacias
+			}).setStyle({
+				color: "#f16e31",
+				fillOpacity: 0.75
+			}),
+			subcuencas = L.geoJson(SubcuencasMaure, {
+				onEachFeature: agregarPopupfarmacias
+			}).setStyle({
+				color: "#a3f1f0",
+				fillOpacity: 0.50
+			}),
+			puestos = L.geoJson(Puestos, {
+				pointToLayer: crearIconoRojo,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			circuitoCieneguita = L.geoJson(CieneguitaTrancas, {
+				onEachFeature: agregarPopupCircuitos
+			}).setStyle({
+				color: "#20e41d"
+			}),
+			circuitoIgnacio = L.geoJson(TrancasIgnacio, {
+				onEachFeature: agregarPopupCircuitos
+			}).setStyle({
+				color: "yellow"
+			}),
+			diques = L.geoJson(Diques, {
+				pointToLayer: crearIconoNaranja,
+				onEachFeature: agregarPopuppatrimoniales
+			}),
+			canales = L.geoJson(Canales, {
+				onEachFeature: agregarPopuppatrimoniales
+			}).setStyle({
+				color: "blue"
+			}),
+			Espacios2 = L.geoJson(EspaciosVerdes2, {
+				pointToLayer: crearIconoEsparcimiento,
+				onEachFeature: agregarPopupespaciosverdes
+			}),
+			hiper = L.geoJson(Hipermercados, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			supermer = L.geoJson(Supermercados, {
+				pointToLayer: crearIconoComercio,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			muse = L.geoJson(Museos, {
+				pointToLayer: crearIconoCultura,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			teatr = L.geoJson(Teatro, {
+				pointToLayer: crearIconoCultura,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			biblio = L.geoJson(Biblioteca, {
+				pointToLayer: crearIconoCultura,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			culto = L.geoJson(Culto, {
+				pointToLayer: crearIconoCulto,
+				onEachFeature: agregarPopupfarmacias
+			}),
+			infoambiente = L.geoJson(InfoAmbiente, {
+				onEachFeature: agregarPopupDepen
+			});
+
+
+		/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
+		var map = L.map('map', { dragging: !L.Browser.mobile, tap: !L.Browser.mobile,
+			layers: [mapabase_esri, godoycruz]
+		}).setView([-32.9337, -68.8978], 13);
+		var marker = L.marker(map.getCenter(), {
+				icon: iconoSTV
+			}).bindPopup(
+				'Mover éste marcador y clickear el boton "Enlace externo de Street View", ubicado a la izquierda del mapa')
+			.addTo(map);
+		map.on('move', function () {
+			marker.setLatLng(map.getCenter());
+		});
+
+		/* FUNCIONES DE ESTILO DE OVERLAYS */
+		estiloDistritosDepartamentales();
+		estilozoni();
+		estilored();
+		estilocloacas();
+		estilocuencas();
+		estiloley();
+		estiloinundacion();
+		estilosuelo();
+		estilometro();
+		estilosendero();
+
+		/* CREACIÓN DEL LAYERS CONTROL */
+		var baseMaps = {
+			"OpenTopoMap": mapabase_ot,
+			"Argenmap": mapabase_argenmap,
+			"ESRI Satelital": mapabase_esri,
+		};
+
+		var groupedOverlays = {
+			"Street View": {
+				"Marcador": marker,
+			},
+
+			"ESTRUCTURA URBANA": {
+				"Distritos": Depa,
+				"Límite Urbano": limiurb,
+				"Zonificación": zonificacion,
+			},
+
+			"OFICINA": {
+				"Dependencias Municipales": depen,
+				"Bancos": bank,
+			},
+			
+			"SERVICIOS": {
+				"Cajeros": caja,
+				"Estaciones de Servicio": estacion,				
+				"Pago Facil - Rapipago": cobro,
+				"Puntos Verdes": punt,
+				"Solmáforos": solma,
+				"Puntos de Wifi": puntoswifi,	
+				"Ciclovías Existentes": cicloviasexist,
+				"Ciclovías Proyectadas DAMI II": cicloDami,
+				"Ciclovías Proyectadas Municipalidad": cicloMuni,
+				"Ciclovías en Ejecución DAMI II": cicloEjec,
+				"Metrotranvía": metro,
+				"Paradas Metrotranvía": paradasMetro,
+				"Puestos Programa en la Bici": bicicleta,
+				"Informador Turístico": informador,
+			},
+
+			"COMERCIO": {
+				"Bares y Comidas": bar,
+				"Casas de Té y Café": cafe,
+				"Heladerías": hela,
+				"Farmacias": farmacias,
+				"Restaurantes": resto,
+				"Hipermercados": hiper,
+				"Supermercados": supermer,
+			},
+
+			"CULTURA": {
+				"Biblioteca": biblio,
+				"Culto": culto,
+				"Museos": muse,
+				"Teatros": teatr,
+			},
+
+			"ENSEÑANAZA": {
+				"Establecimientos Educativos": escuelas,
+				"Jardines Municipales": jardinesmuni,
+			},
+
+			"ASISTENCIA": {
+				"Centros de Salud": centrosdesalud,
+				"Clínicas Privadas": clinicaspriv,	
+				"Hospitales": hospital,
+			},
+
+			"ESPARCIMIENTO": {
+			    "Polideportivos": polideportivos,
+			    "Uniones Vecinales": union,
+			    /* "Espacios Verdes": espverdes, */
+				"Espacios Verdes": Espacios2,
+			},
+		};
+
+		var opciones_groupedlayers = {
+			groupCheckboxes: false
+		};
+
+		/* var circle1 = L.circle([-32.925595, -68.844088], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 500
+        }).addTo(map);
+
+		var circle2 = L.circle([-32.910273, -68.874547], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 300
+        }).addTo(map);
+
+
+		circle1.bindPopup("Nodo Grado 1");
+		circle2.bindPopup("Nodo Grado 2"); */
+
+		L.control.mousePosition().addTo(map);
+	</script>
+
+	<script src="js/funcionesMapa.js"></script>
+</body>
+
+</html>
