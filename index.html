@@ -602,14 +602,14 @@
 		var map = L.map('map', { dragging: !L.Browser.mobile, tap: !L.Browser.mobile,
 			layers: [mapabase_esri, godoycruz]
 		}).setView([-32.9337, -68.8978], 13);
-		var marker = L.marker(map.getCenter(), {
+		/* var marker = L.marker(map.getCenter(), {
 				icon: iconoSTV
 			}).bindPopup(
 				'Mover éste marcador y clickear el boton "Enlace externo de Street View", ubicado a la izquierda del mapa')
 			.addTo(map);
 		map.on('move', function () {
 			marker.setLatLng(map.getCenter());
-		});
+		}); */
 
 		/* FUNCIONES DE ESTILO DE OVERLAYS */
 		estiloDistritosDepartamentales();
@@ -632,7 +632,7 @@
 
 		var groupedOverlays = {
 			"Street View": {
-				"Marcador": marker,
+				/* "Marcador": marker, */
 			},
 
 			"ESTRUCTURA URBANA": {
@@ -648,7 +648,7 @@
 			
 			"SERVICIOS": {
 				"Cajeros": caja,
-				"Estaciones de Servicio": estacion,				
+			/* 	"Estaciones de Servicio": estacion,	 */			
 				"Pago Facil - Rapipago": cobro,
 				"Puntos Verdes": punt,
 				"Solmáforos": solma,
