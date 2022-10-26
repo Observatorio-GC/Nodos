@@ -253,7 +253,7 @@ function estilozoni() {
             color_actual = '#E1E1E1';
         }
         featureInstanceLayer.setStyle({
-            color: color_actual, fillOpacity: 0.75
+            color: color_actual, fillOpacity: 0.45
         });
     });
 }
