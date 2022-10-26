@@ -270,22 +270,22 @@
 			cicloMuni = L.geoJson(CicloviasProyectadasMuni, {
 				onEachFeature: agregarPopupciclovias
 			}).setStyle({
-				color: "yellow"
+				color: " #9404ff"
 			}),
 			cicloDami = L.geoJson(CicloviasProyectadasDami, {
 				onEachFeature: agregarPopupciclovias
 			}).setStyle({
-				color: "orange"
+				color: " #01b2b4"
 			}),
 			cicloviasexist = L.geoJson(CicloviasExistentes, {
 				onEachFeature: agregarPopupciclovias
 			}).setStyle({
-				color: "red"
+				color: "#e72e01"
 			}),
 			cicloEjec = L.geoJson(CicloviasenEjecucionDami, {
 				onEachFeature: agregarPopupciclovias
 			}).setStyle({
-				color: "#03db5d"
+				color: "#02650b"
 			}),
 			muniEjec = L.geoJson(CicloviasenEjecucionMuni, {
 				onEachFeature: agregarPopupciclovias
@@ -600,7 +600,7 @@
 
 		/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
 		var map = L.map('map', { dragging: !L.Browser.mobile, tap: !L.Browser.mobile,
-			layers: [mapabase_esri, godoycruz]
+			layers: [mapabase_argenmap, godoycruz]
 		}).setView([-32.9337, -68.8978], 13);
 		/* var marker = L.marker(map.getCenter(), {
 				icon: iconoSTV
@@ -675,9 +675,12 @@
 
 			"CULTURA": {
 				"Biblioteca": biblio,
-				"Culto": culto,
 				"Museos": muse,
 				"Teatros": teatr,
+			},
+
+			"CULTO":{
+				"Iglesias": culto,
 			},
 
 			"ENSEÑANAZA": {
