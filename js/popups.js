@@ -54,7 +54,12 @@ function agregarPopuppatrimoniales(feature, layer) {
 }
 function agregarPopupespaciosverdes(feature, layer) {
     if (feature.properties && feature.properties.NOMBRE) {
-        layer.bindPopup("<strong>" + feature.properties.DESCRIPTIO + "</strong><br/>" + feature.properties.NOMBRE);
+        layer.bindPopup("<strong>" + feature.properties.NOMBRE + "</strong><br/>" + feature.properties.Descriptio);
+    }
+}
+function agregarPopupNodos(feature, layer) {
+    if (feature.properties && feature.properties.NOMBRE) {
+        layer.bindPopup("<strong>" + feature.properties.NOMBRE + "</strong><br/>" + "Servicios faltantes: <strong>" + feature.properties.DESCRIPTIO); 
     }
 }
 function agregarPopup(feature, layer) {
@@ -253,7 +258,7 @@ function estilozoni() {
             color_actual = '#E1E1E1';
         }
         featureInstanceLayer.setStyle({
-            color: color_actual, fillOpacity: 0.45
+            color: color_actual, fillOpacity: 0.45 
         });
     });
 }
@@ -392,3 +397,20 @@ function estilosendero() {
         });
     });
 }
+
+function estiloindice() {
+    indice.eachLayer(function (featureInstanceLayer) {
+        var id_feature = featureInstanceLayer.feature.properties['PROMEDIO_P'];
+        if (id_feature == 1) {
+            color_actual = '#f2301b';
+        } else if (id_feature == 2) {
+            color_actual = '#ff9e27';
+        } else if (id_feature == 3) {
+            color_actual = '#f3d809';
+        }
+        featureInstanceLayer.setStyle({
+            color: color_actual, fillOpacity: 1, weight: 5
+        });
+    });
+}
+
