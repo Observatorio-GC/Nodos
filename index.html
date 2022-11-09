@@ -136,13 +136,24 @@
 	<script type="text/javascript" src="scripts/TrancasIgnacio.js"></script>
 	<script type="text/javascript" src="scripts/Diques.js"></script>
 	<script type="text/javascript" src="scripts/Canales.js"></script>
-	<script type="text/javascript" src="scripts/EspaciosVerdes2.js"></script>
 	<script type="text/javascript" src="scripts/Hipermercados.js"></script>
 	<script type="text/javascript" src="scripts/Supermercados.js"></script>
 	<script type="text/javascript" src="scripts/Museos.js"></script>
 	<script type="text/javascript" src="scripts/Teatro.js"></script>
 	<script type="text/javascript" src="scripts/Biblioteca.js"></script>
 	<script type="text/javascript" src="scripts/Culto.js"></script>
+	<script type="text/javascript" src="scripts/Centro1.js"></script>
+	<script type="text/javascript" src="scripts/Centro2.js"></script>
+	<script type="text/javascript" src="scripts/Trapiche1.js"></script>
+	<script type="text/javascript" src="scripts/Benegas2.js"></script>
+	<script type="text/javascript" src="scripts/Marini.js"></script>
+	<script type="text/javascript" src="scripts/Monte2.js"></script>
+	<script type="text/javascript" src="scripts/Hipodromo2.js"></script>
+	<script type="text/javascript" src="scripts/Tortugas2.js"></script>
+	<script type="text/javascript" src="scripts/Parque2.js"></script>
+	<script type="text/javascript" src="scripts/EspaciosVerdes.js"></script>
+	<script type="text/javascript" src="scripts/Indice.js"></script>
+	<script type="text/javascript" src="scripts/Corredores.js"></script>
 
 </head>
 
@@ -165,7 +176,7 @@
 		}
 	</style>
 
-	<h1>Nodos Participativos</h1>
+	<h1>Red de Nodos Distritales</h1>
 	<img src="img/favicon.png" height="auto" width="45px" class="logogc">
 	<div id="map"></div>
 	<div id="referencias">
@@ -368,12 +379,6 @@
 			redesagua = L.geoJson(RedesdeAguas, {
 				onEachFeature: agregarPopupredes
 			}),
-			/* espverdes = L.geoJson(EspaciosVerdes, {
-				onEachFeature: agregarPopupespaciosverdes
-			}).setStyle({
-				color: "#4daf4a",
-				fillOpacity: 0.75
-			}), */
 			cuencas = L.geoJson(Cuencashidrograficas, {
 				onEachFeature: agregarPopupcuencas
 			}),
@@ -394,7 +399,7 @@
 				onEachFeature: agregarPopupfarmacias
 			}),
 			estacion = L.geoJson(EstacionesdeServicio, {
-				pointToLayer: crearIconoAzul,
+				pointToLayer: crearIconoServicios,
 				onEachFeature: agregarPopupPV
 			}),
 			meteo = L.geoJson(Estaciones, {
@@ -565,9 +570,11 @@
 			}).setStyle({
 				color: "blue"
 			}),
-			Espacios2 = L.geoJson(EspaciosVerdes2, {
-				pointToLayer: crearIconoEsparcimiento,
+			espverdes = L.geoJson(EspaciosVerdes, {
 				onEachFeature: agregarPopupespaciosverdes
+			}).setStyle({
+				color: "#4daf4a",
+				fillOpacity: 0.75
 			}),
 			hiper = L.geoJson(Hipermercados, {
 				pointToLayer: crearIconoComercio,
@@ -593,24 +600,93 @@
 				pointToLayer: crearIconoCulto,
 				onEachFeature: agregarPopupfarmacias
 			}),
+			
+
+			nodosTortugas2 = L.geoJson(Tortugas2, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosHipodromo2 = L.geoJson(Hipodromo2, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosMarini2 = L.geoJson(Marini, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosParque2 = L.geoJson(Parque2, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosMonte2 = L.geoJson(Monte2, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosBenegas2 = L.geoJson(Benegas2, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosCentro2 = L.geoJson(Centro2, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#ffce2c",
+				fillOpacity: 0.40
+			}),
+
+			nodosCentro1= L.geoJson(Centro1, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#6e2162",
+				fillOpacity: 0.60
+			}),
+
+			nodosTrapiche1= L.geoJson(Trapiche1, {
+				onEachFeature: agregarPopupNodos
+			}).setStyle({
+				color: "#6e2162",
+				fillOpacity: 0.60
+			}),
+
+			indice = L.geoJson(Indice, {
+				onEachFeature: agregarPopuppuntorecepcionpilas
+			}),
+
+			corredores = L.geoJson(Corredores, {
+				onEachFeature: agregarPopuppuntorecepcionpilas
+			}).setStyle({
+				color: "#0a428b",
+				weight: 5
+			}),
+
 			infoambiente = L.geoJson(InfoAmbiente, {
 				onEachFeature: agregarPopupDepen
 			});
-
+		
 
 		/* CREACIÓN DEL MAPA CON BASE LAYERS Y OVERLAYS */
 		var map = L.map('map', { dragging: !L.Browser.mobile, tap: !L.Browser.mobile,
-			layers: [mapabase_argenmap, godoycruz]
+			layers: [mapabase_esri, godoycruz]
 		}).setView([-32.9337, -68.8978], 13);
-		/* var marker = L.marker(map.getCenter(), {
-				icon: iconoSTV
-			}).bindPopup(
-				'Mover éste marcador y clickear el boton "Enlace externo de Street View", ubicado a la izquierda del mapa')
-			.addTo(map);
-		map.on('move', function () {
-			marker.setLatLng(map.getCenter());
-		}); */
 
+	
 		/* FUNCIONES DE ESTILO DE OVERLAYS */
 		estiloDistritosDepartamentales();
 		estilozoni();
@@ -622,6 +698,7 @@
 		estilosuelo();
 		estilometro();
 		estilosendero();
+		estiloindice();
 
 		/* CREACIÓN DEL LAYERS CONTROL */
 		var baseMaps = {
@@ -631,15 +708,31 @@
 		};
 
 		var groupedOverlays = {
-			"Street View": {
-				/* "Marcador": marker, */
-			},
-
 			"ESTRUCTURA URBANA": {
 				"Distritos": Depa,
 				"Barrios Consolidados": BarriosConsolidados,
 				"Límite Urbano": limiurb,
 				"Zonificación": zonificacion,
+			},
+
+			"NODOS GRADO 1":{
+				"Centro": nodosCentro1,
+				"Trapiche": nodosTrapiche1,
+			},
+
+			"NODOS GRADO 2":{
+				"Gob. Benegas":nodosBenegas2,
+				"Centro": nodosCentro2,
+				"San Francisco del Monte": nodosMonte2,
+				"Villa Hipódromo": nodosHipodromo2,
+				"Villa Marini": nodosMarini2,
+				"Villa del Parque": nodosParque2,
+				"Las Tortugas": nodosTortugas2,
+			},
+
+			"CAMINABILIDAD":{
+				"Diagnóstico Indice de Caminabilidad": indice,
+				"Propuesta Corredores de Conexión Territorial":corredores,
 			},
 
 			"OFICINA": {
@@ -649,7 +742,7 @@
 			
 			"SERVICIOS": {
 				"Cajeros": caja,
-			/* 	"Estaciones de Servicio": estacion,	 */			
+			 	"Estaciones de Servicio": estacion,	 		
 				"Pago Facil - Rapipago": cobro,
 				"Puntos Verdes": punt,
 				"Solmáforos": solma,
@@ -698,32 +791,13 @@
 			"ESPARCIMIENTO": {
 			    "Polideportivos": polideportivos,
 			    "Uniones Vecinales": union,
-			    /* "Espacios Verdes": espverdes, */
-				"Espacios Verdes": Espacios2,
+			    "Espacios Verdes": espverdes, 
 			},
 		};
 
 		var opciones_groupedlayers = {
 			groupCheckboxes: false
 		};
-
-		/* var circle1 = L.circle([-32.925595, -68.844088], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 500
-        }).addTo(map);
-
-		var circle2 = L.circle([-32.910273, -68.874547], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 300
-        }).addTo(map);
-
-
-		circle1.bindPopup("Nodo Grado 1");
-		circle2.bindPopup("Nodo Grado 2"); */
 
 		L.control.mousePosition().addTo(map);
 	</script>
