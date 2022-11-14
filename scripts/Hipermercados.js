@@ -10,6 +10,8 @@ var Hipermercados ={
 { "type": "Feature", "properties": { "id": 4, "Nombre": "Chango Mas" }, "geometry": { "type": "Point", "coordinates": [ -68.8581840268467, -32.951939572690847 ] } },
 { "type": "Feature", "properties": { "id": 5, "Nombre": "Carrefour Maxi" }, "geometry": { "type": "Point", "coordinates": [ -68.845998372741505, -32.922749209316173 ] } },
 { "type": "Feature", "properties": { "id": 6, "Nombre": "Maxi Consumo S.A." }, "geometry": { "type": "Point", "coordinates": [ -68.811084351667887, -32.928120670076829 ] } },
-{ "type": "Feature", "properties": { "id": 7, "Nombre": "Yaguar Mayorista" }, "geometry": { "type": "Point", "coordinates": [ -68.81416043510508, -32.929094950203343 ] } }
+{ "type": "Feature", "properties": { "id": 7, "Nombre": "Yaguar Mayorista" }, "geometry": { "type": "Point", "coordinates": [ -68.81416043510508, -32.929094950203343 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Mayorista Makro" }, "geometry": { "type": "Point", "coordinates": [ -68.829830621721669, -32.926158045493146 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Mercado Cooperativo" }, "geometry": { "type": "Point", "coordinates": [ -68.825411638883324, -32.934221723311694 ] } }
 ]
 }

@@ -3,7 +3,7 @@ var Supermercados ={
 "name": "Supermercados",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "id": 15, "Nombre": "Atomo Estanzuela" }, "geometry": { "type": "Point", "coordinates": [ -68.871349683972355, -32.945405157664787 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Super A" }, "geometry": { "type": "Point", "coordinates": [ -68.85109697663124, -32.943248189511074 ] } },
 { "type": "Feature", "properties": { "id": 1, "Nombre": "Carrefour Market Bombal" }, "geometry": { "type": "Point", "coordinates": [ -68.852390888504317, -32.903115158807132 ] } },
 { "type": "Feature", "properties": { "id": 2, "Nombre": "Vea" }, "geometry": { "type": "Point", "coordinates": [ -68.859607970514972, -32.916657069254619 ] } },
 { "type": "Feature", "properties": { "id": 3, "Nombre": "Vea" }, "geometry": { "type": "Point", "coordinates": [ -68.876330180772257, -32.912618851525956 ] } },
@@ -17,6 +17,7 @@ var Supermercados ={
 { "type": "Feature", "properties": { "id": 11, "Nombre": "Atomo Sportman" }, "geometry": { "type": "Point", "coordinates": [ -68.860874843762673, -32.908981442884816 ] } },
 { "type": "Feature", "properties": { "id": 12, "Nombre": "Atomo Jardin Serrano" }, "geometry": { "type": "Point", "coordinates": [ -68.878689591330868, -32.919299578601766 ] } },
 { "type": "Feature", "properties": { "id": 13, "Nombre": "Atomo Castelli" }, "geometry": { "type": "Point", "coordinates": [ -68.848537552670791, -32.927436704487867 ] } },
-{ "type": "Feature", "properties": { "id": 14, "Nombre": "Atomo Villa Marini" }, "geometry": { "type": "Point", "coordinates": [ -68.858876468670218, -32.924128052940418 ] } }
+{ "type": "Feature", "properties": { "id": 14, "Nombre": "Atomo Villa Marini" }, "geometry": { "type": "Point", "coordinates": [ -68.858876468670218, -32.924128052940418 ] } },
+{ "type": "Feature", "properties": { "id": 15, "Nombre": "Atomo Estanzuela" }, "geometry": { "type": "Point", "coordinates": [ -68.871349683972355, -32.945405157664787 ] } }
 ]
 }

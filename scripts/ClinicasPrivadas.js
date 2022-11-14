@@ -11,7 +11,7 @@ var ClinicasPrivadas ={
 { "type": "Feature", "properties": { "qc_id": 8, "Nombre_1": "Red de Clinicas Santa Clara", "Direccion": "Juan de Garay 71" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.844755602281765, -32.915691564698037 ] ] } },
 { "type": "Feature", "properties": { "qc_id": 9, "Nombre_1": "Clinica Santa Clara", "Direccion": "Av. San Martín 835" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.845733610691326, -32.91580701701352 ] ] } },
 { "type": "Feature", "properties": { "qc_id": 11, "Nombre_1": "Neuromed", "Direccion": "Leguizamón 398" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.849574062855723, -32.928943118020079 ] ] } },
-{ "type": "Feature", "properties": { "qc_id": 13, "Nombre_1": "Centro Medico Palmares", "Direccion": "Palmares Open Mall -  Ruta Panamericana 2650" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.859004495966502, -32.955441126096503 ] ] } },
+{ "type": "Feature", "properties": { "qc_id": 13, "Nombre_1": "Centro Medico Palmares", "Direccion": "Palmares Open Mall -  Ruta Panamericana 2650" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.859171453126365, -32.955893158163754 ] ] } },
 { "type": "Feature", "properties": { "qc_id": 15, "Nombre_1": "Centro Especializado en Rehabilitacion", "Direccion": "Jean Jaures 132" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.843939442415916, -32.917682723587397 ] ] } },
 { "type": "Feature", "properties": { "qc_id": 16, "Nombre_1": "Clinica Schweizer", "Direccion": "Av. San Martín 1034" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.845699178112611, -32.914020682354632 ] ] } },
 { "type": "Feature", "properties": { "qc_id": 17, "Nombre_1": "Respira Salud", "Direccion": "Tte. 1 Ibañez 71" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.844223838167366, -32.912824402311081 ] ] } },
@@ -24,6 +24,10 @@ var ClinicasPrivadas ={
 { "type": "Feature", "properties": { "qc_id": 4, "Nombre_1": "Centro Medico Plaza", "Direccion": "Perito Moreno 72" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.843533933286594, -32.925338367383119 ] ] } },
 { "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Ser Salud", "Direccion": "Cayetano Silva 1127" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.873457955234912, -32.913303067281682 ] ] } },
 { "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "CIVSA", "Direccion": "La Plata 1283" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.87921304414084, -32.912307655643446 ] ] } },
-{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Mass Centro médico", "Direccion": "Chuquisaca 1294" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.877026688757454, -32.912004174258968 ] ] } }
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Mass Centro médico", "Direccion": "Chuquisaca 1294" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.877026688757454, -32.912004174258968 ] ] } },
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Hospital de Día", "Direccion": "Palmares Open Mall" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.858951660786246, -32.955475773233147 ] ] } },
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Santa Elena", "Direccion": "Anzorena 102" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.847494985057125, -32.915930536062632 ] ] } },
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Clínica Proas", "Direccion": "Sarmiento 1694" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.827122259530427, -32.941083280801244 ] ] } },
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Infanzia Centro Médico", "Direccion": "Feliciani 1940" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.850754995276532, -32.94673687334349 ] ] } }
 ]
 }

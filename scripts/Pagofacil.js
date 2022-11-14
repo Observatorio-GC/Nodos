@@ -29,10 +29,13 @@ var Pagofacil ={
 { "type": "Feature", "properties": { "Nombre_1": "Pago Facil", "Descrip": "Juan XXIII 353" }, "geometry": { "type": "Point", "coordinates": [ -68.835465509994748, -32.930431377292706 ] } },
 { "type": "Feature", "properties": { "Nombre_1": "Pago Facil", "Descrip": "Boulogne Sur Mer 747" }, "geometry": { "type": "Point", "coordinates": [ -68.863617382210137, -32.917722118787466 ] } },
 { "type": "Feature", "properties": { "Nombre_1": "Pago Facil", "Descrip": "Farmacia Natal IV - Chapanay 2604" }, "geometry": { "type": "Point", "coordinates": [ -68.871875988757552, -32.916272530058833 ] } },
-{ "type": "Feature", "properties": { "Nombre_1": "Pago Facil", "Descrip": "Super Vea - America 2780" }, "geometry": { "type": "Point", "coordinates": [ -68.876327227191652, -32.912418566398443 ] } },
 { "type": "Feature", "properties": { "Nombre_1": "Pago Facil", "Descrip": "Paso de los Andes 1816" }, "geometry": { "type": "Point", "coordinates": [ -68.860754098651483, -32.907437079547599 ] } },
 { "type": "Feature", "properties": { "Nombre_1": "Pago facil", "Descrip": "Av.San Martin y Pasteur - Shell" }, "geometry": { "type": "Point", "coordinates": [ -68.84535287572939, -32.912765416974395 ] } },
 { "type": "Feature", "properties": { "Nombre_1": "Pago Facil", "Descrip": "Super Vea - Av.San Martin y Democracia" }, "geometry": { "type": "Point", "coordinates": [ -68.846222798835015, -32.91740693619608 ] } },
-{ "type": "Feature", "properties": { "Nombre_1": "Rapipago", "Descrip": "Vergara 820" }, "geometry": { "type": "Point", "coordinates": [ -68.834912169392624, -32.935146127348204 ] } }
+{ "type": "Feature", "properties": { "Nombre_1": "Rapipago", "Descrip": "Vergara 820" }, "geometry": { "type": "Point", "coordinates": [ -68.834912169392624, -32.935146127348204 ] } },
+{ "type": "Feature", "properties": { "Nombre_1": "Pago Facil OFME", "Descrip": "Av. San Martín Sur 3275" }, "geometry": { "type": "Point", "coordinates": [ -68.862098161655467, -32.958590339416126 ] } },
+{ "type": "Feature", "properties": { "Nombre_1": "Rapipago", "Descrip": "Sarmiento 305" }, "geometry": { "type": "Point", "coordinates": [ -68.843222048444673, -32.938163482531316 ] } },
+{ "type": "Feature", "properties": { "Nombre_1": "Western union y pago facil", "Descrip": "Maxi Carrefour" }, "geometry": { "type": "Point", "coordinates": [ -68.845994755910013, -32.92354842304038 ] } },
+{ "type": "Feature", "properties": { "Nombre_1": "Rapipago", "Descrip": "Perito Moreno 72" }, "geometry": { "type": "Point", "coordinates": [ -68.843689828343173, -32.925689486163755 ] } }
 ]
 }
