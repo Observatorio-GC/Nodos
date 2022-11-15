@@ -50,6 +50,16 @@ var Culto ={
 { "type": "Feature", "properties": { "id": 45, "Nombre": "Iglesia de Jesucristo de los Santos de los Últimos días", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.836167354315137, -32.943294207080626 ] } },
 { "type": "Feature", "properties": { "id": 46, "Nombre": "Iglesia Cristiana Evangélica Flor de Cuyo", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.853813851370802, -32.955989922982198 ] } },
 { "type": "Feature", "properties": { "id": 47, "Nombre": "Iglesia Angular", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.846189526613514, -32.910984863485027 ] } },
-{ "type": "Feature", "properties": { "id": 48, "Nombre": "Santuario de Schoenstatt", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.866472617935116, -32.958426507897585 ] } }
+{ "type": "Feature", "properties": { "id": 48, "Nombre": "Santuario de Schoenstatt", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.866472617935116, -32.958426507897585 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Capilla Virgen del Valle", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.873911999937604, -32.90163176912673 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Capilla de la Medalla Religiosa", "Tipo": "Capilla" }, "geometry": { "type": "Point", "coordinates": [ -68.871378604017067, -32.907432404804318 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Capilla y Comunidad Espiritu Santo", "Tipo": "Capilla" }, "geometry": { "type": "Point", "coordinates": [ -68.872390805583436, -32.913531282031165 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Auditorio los Amigos de Cristo", "Tipo": "Auditorio" }, "geometry": { "type": "Point", "coordinates": [ -68.870065633985249, -32.918712084108648 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "SMI Iglesia Adventista", "Tipo": "Iglesia" }, "geometry": { "type": "Point", "coordinates": [ -68.884528548366475, -32.909984175655715 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Capilla Nuestra Señora del Perpetuo Socorro", "Tipo": "Capilla" }, "geometry": { "type": "Point", "coordinates": [ -68.851913967895612, -32.906109752486287 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Parroquia San Juan Diego", "Tipo": "Parroquia" }, "geometry": { "type": "Point", "coordinates": [ -68.870453162584766, -32.946884971202643 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Iglesia Cruz & Gracia", "Tipo": "Iglesia" }, "geometry": { "type": "Point", "coordinates": [ -68.831503646310679, -32.940230166005556 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Parroquia San Vicente Ferrer\t", "Tipo": "Parroquia" }, "geometry": { "type": "Point", "coordinates": [ -68.844705646740579, -32.925995405055652 ] } },
+{ "type": "Feature", "properties": { "id": null, "Nombre": "Ministerio Cristo Es La Respuesta", "Tipo": null }, "geometry": { "type": "Point", "coordinates": [ -68.857763406621814, -32.95719825057482 ] } }
 ]
 }
