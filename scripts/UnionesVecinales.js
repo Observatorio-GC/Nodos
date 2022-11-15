@@ -28,6 +28,7 @@ var UnionesVecinales ={
 { "type": "Feature", "properties": { "Nombre": "Asociación Mutual La esperanza Sede", "Direccion": "Pte. Arturo Illia 971" }, "geometry": { "type": "Point", "coordinates": [ -68.869415, -32.932212, 0.0 ] } },
 { "type": "Feature", "properties": { "Nombre": "Unión Vecinal Gloria del Libertador", "Direccion": "Salvador Arias 1575" }, "geometry": { "type": "Point", "coordinates": [ -68.863359, -32.928682, 0.0 ] } },
 { "type": "Feature", "properties": { "Nombre": "Sede Union Vecinal COVIMET III", "Direccion": "Penitentes 1971" }, "geometry": { "type": "Point", "coordinates": [ -68.822377, -32.943949, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "Vecinal Barraquero", "Direccion": null }, "geometry": { "type": "Point", "coordinates": [ -68.841842, -32.905636, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nombre": "Vecinal Barraquero", "Direccion": null }, "geometry": { "type": "Point", "coordinates": [ -68.841842, -32.905636, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Union Vecinal Barrio Bianchi", "Direccion": "Alfaro 2310" }, "geometry": { "type": "Point", "coordinates": [ -68.852881522316991, -32.95114576217771, 0.0 ] } }
 ]
 }

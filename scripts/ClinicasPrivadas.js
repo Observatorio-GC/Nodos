@@ -28,6 +28,7 @@ var ClinicasPrivadas ={
 { "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Hospital de Día", "Direccion": "Palmares Open Mall" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.858951660786246, -32.955475773233147 ] ] } },
 { "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Santa Elena", "Direccion": "Anzorena 102" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.847494985057125, -32.915930536062632 ] ] } },
 { "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Clínica Proas", "Direccion": "Sarmiento 1694" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.827122259530427, -32.941083280801244 ] ] } },
-{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Infanzia Centro Médico", "Direccion": "Feliciani 1940" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.850754995276532, -32.94673687334349 ] ] } }
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Infanzia Centro Médico", "Direccion": "Feliciani 1940" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.850754995276532, -32.94673687334349 ] ] } },
+{ "type": "Feature", "properties": { "qc_id": null, "Nombre_1": "Sanatorio San Ignacio de Loyola", "Direccion": "Av. del Trabajo 12" }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -68.854047903871972, -32.952976294608426 ] ] } }
 ]
 }
