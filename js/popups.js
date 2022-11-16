@@ -235,13 +235,13 @@ function estilozoni() {
         if (id_feature == "CEMENTERIO") {
             color_actual = '#202bf1';
         } else if (id_feature == "CENTRO CIVICO") {
-            color_actual = '#FF0000';
+            color_actual = '#035d04';
         } else if (id_feature == "COMERCIAL") {
-            color_actual = '#ff7f00';
+            color_actual = '#0055ff';
         } else if (id_feature == "COMERCIAL MIXTA") {
             color_actual = '#e9e517';
         } else if (id_feature == "EXTENSION INDUSTRIAL") {
-            color_actual = '#945bfe';
+            color_actual = '#6619ff';
         } else if (id_feature == "INDUSTRIAL1") {
             color_actual = '#dcc587';
         } else if (id_feature == "INDUSTRIAL2") {
@@ -249,11 +249,11 @@ function estilozoni() {
         } else if (id_feature == "PARQUE RECREACION") {
             color_actual = '#1ed736';
         } else if (id_feature ==  "CULTURAL") {
-            color_actual = '#74d1af';
+            color_actual = '#c074d1';
         } else if (id_feature == "RESIDENCIAL") {
             color_actual = '#48ccdb';
         } else if (id_feature == "RESIDENCIAL MIXTA") {
-            color_actual = '#e93a13';
+            color_actual = '#e95f28';
         } 
         featureInstanceLayer.setStyle({
             color: color_actual, fillOpacity: 0.35 
