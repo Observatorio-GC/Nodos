@@ -154,6 +154,8 @@
 	<script type="text/javascript" src="scripts/EspaciosVerdes.js"></script>
 	<script type="text/javascript" src="scripts/Indice.js"></script>
 	<script type="text/javascript" src="scripts/Corredores.js"></script>
+	<script type="text/javascript" src="scripts/TIC.js"></script>
+	<script type="text/javascript" src="scripts/NodoIndustrial.js"></script>
 
 </head>
 
@@ -601,7 +603,8 @@
 				onEachFeature: agregarPopupfarmacias
 			}),
 			
-
+			
+			//NODOS
 			nodosTortugas2 = L.geoJson(Tortugas2, {
 				onEachFeature: agregarPopupNodos
 			}).setStyle({
@@ -665,6 +668,21 @@
 				fillOpacity: 0.60
 			}),
 
+			nodoIndustrial = L.geoJson(NodoIndustrial, {
+				onEachFeature: agregarPopupfarmacias
+			}).setStyle({
+				color: "#ff3eb2",
+				fillOpacity: 0.30
+			}),
+
+			tic = L.geoJson(TIC, {
+				onEachFeature: agregarPopupfarmacias
+			}).setStyle({
+				color: "#0e0ef0",
+				fillOpacity: 0.70
+			}),
+
+			//CAMINABILIDAD
 			indice = L.geoJson(Indice, {
 				onEachFeature: agregarPopuppuntorecepcionpilas
 			}),
@@ -675,6 +693,7 @@
 				color: "#0a428b",
 				weight: 5
 			}),
+
 
 			infoambiente = L.geoJson(InfoAmbiente, {
 				onEachFeature: agregarPopupDepen
@@ -712,12 +731,14 @@
 				"Distritos (Ordenanza N° 7124/2021)": Depa,
 				"Barrios Consolidados": BarriosConsolidados,
 				"Límite Urbano": limiurb,
-			        "Zonificación (Ordenanza Nº 4947/03)": zonificacion,
+				"Zonificación (Ordenanza Nº 4947/03)": zonificacion,
 			},
 
-			"NODOS GRADO 1":{
+			"NODOS GRADO 1 - POLOS URBANOS":{
 				"Centro": nodosCentro1,
 				"Trapiche": nodosTrapiche1,
+				"Zona Industrial": nodoIndustrial,
+				"Parque TIC": tic,
 			},
 
 			"NODOS GRADO 2":{
@@ -777,12 +798,12 @@
 				"Iglesias": culto,
 			},
 
-			"ENSEÑANAZA": {
+			"EDUCACIÓN": {
 				"Establecimientos Educativos": escuelas,
 				"Jardines Municipales": jardinesmuni,
 			},
 
-			"ASISTENCIA": {
+			"SALUD": {
 				"Centros de Salud": centrosdesalud,
 				"Clínicas Privadas": clinicaspriv,	
 				"Hospitales": hospital,
