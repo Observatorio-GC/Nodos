@@ -156,6 +156,7 @@
 	<script type="text/javascript" src="scripts/Corredores.js"></script>
 	<script type="text/javascript" src="scripts/TIC.js"></script>
 	<script type="text/javascript" src="scripts/NodoIndustrial.js"></script>
+	<script type="text/javascript" src="scripts/PistasDeSalud.js"></script>
 
 </head>
 
@@ -602,6 +603,10 @@
 				pointToLayer: crearIconoCulto,
 				onEachFeature: agregarPopupfarmacias
 			}),
+			pistas = L.geoJson(PistasDeSalud, {
+				pointToLayer: crearIconoEsparcimiento,
+				onEachFeature: agregarPopuppuntorecepcionpilas
+			}),
 			
 			
 			//NODOS
@@ -812,7 +817,8 @@
 			"ESPARCIMIENTO": {
 			    "Polideportivos": polideportivos,
 			    "Uniones Vecinales": union,
-			    "Espacios Verdes": espverdes, 
+			    "Espacios Verdes": espverdes,
+				"Pistas de Salud": pistas, 
 			},
 		};
 
