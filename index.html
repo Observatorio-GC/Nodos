@@ -157,6 +157,7 @@
 	<script type="text/javascript" src="scripts/TIC.js"></script>
 	<script type="text/javascript" src="scripts/NodoIndustrial.js"></script>
 	<script type="text/javascript" src="scripts/PistasDeSalud.js"></script>
+	<script type="text/javascript" src="scripts/Universidades.js"></script>
 
 </head>
 
@@ -607,6 +608,11 @@
 				pointToLayer: crearIconoEsparcimiento,
 				onEachFeature: agregarPopuppuntorecepcionpilas
 			}),
+			uni = L.geoJson(Universidades, {
+				pointToLayer: crearIconoEnseñanza,
+				onEachFeature: agregarPopupfarmacias
+			})
+
 			
 			
 			//NODOS
@@ -772,7 +778,7 @@
 				"Pago Facil - Rapipago": cobro,
 				"Puntos Verdes": punt,
 				"Solmáforos": solma,
-				"Puntos de Wifi": puntoswifi,	
+				"Puntos Wifi": puntoswifi,	
 				"Ciclovías Existentes": cicloviasexist,
 				"Ciclovías Proyectadas DAMI II": cicloDami,
 				"Ciclovías Proyectadas Municipalidad": cicloMuni,
@@ -794,18 +800,19 @@
 			},
 
 			"CULTURA": {
-				"Biblioteca": biblio,
+				"Bibliotecas": biblio,
 				"Museos": muse,
 				"Teatros": teatr,
 			},
 
 			"CULTO":{
-				"Iglesias": culto,
+				"Templos": culto,
 			},
 
 			"EDUCACIÓN": {
 				"Establecimientos Educativos": escuelas,
 				"Jardines Municipales": jardinesmuni,
+				"Universidades": uni,
 			},
 
 			"SALUD": {
