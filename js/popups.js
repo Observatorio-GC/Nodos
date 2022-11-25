@@ -62,6 +62,11 @@ function agregarPopupNodos(feature, layer) {
         layer.bindPopup("<strong>" + feature.properties.NOMBRE + "</strong><br/>" + "Servicios faltantes: <strong>" + feature.properties.DESCRIPTIO); 
     }
 }
+function agregarPopupPolos(feature, layer) {
+    if (feature.properties && feature.properties.NOMBRE) {
+        layer.bindPopup("<strong>" + feature.properties.NOMBRE + "</strong><br/>" + "Propuesta: <strong>" + feature.properties.DESCRIPTIO); 
+    }
+}
 function agregarPopup(feature, layer) {
     if (feature.properties && feature.properties.Nombre_1) {
         layer.bindPopup("<strong>" + feature.properties.Nombre_1 + "</strong>");
