@@ -158,6 +158,9 @@
 	<script type="text/javascript" src="scripts/NodoIndustrial.js"></script>
 	<script type="text/javascript" src="scripts/PistasDeSalud.js"></script>
 	<script type="text/javascript" src="scripts/Universidades.js"></script>
+	<script type="text/javascript" src="scripts/NodosPropuestos.js"></script>
+	<script type="text/javascript" src="scripts/PolosPropuestos.js"></script>
+	<script type="text/javascript" src="scripts/Arizu.js"></script>
 
 </head>
 
@@ -612,6 +615,10 @@
 				pointToLayer: crearIconoEnseñanza,
 				onEachFeature: agregarPopupfarmacias
 			})
+			arizu = L.geoJson(Arizu, {
+				pointToLayer: crearIconoCultura,
+				onEachFeature: agregarPopupfarmacias
+			})
 
 			
 			
@@ -679,13 +686,21 @@
 				fillOpacity: 0.60
 			}),
 
-			/* nodoIndustrial = L.geoJson(NodoIndustrial, {
-				onEachFeature: agregarPopupfarmacias
+			nodosPropuesta= L.geoJson(NodosPropuestos, {
+				onEachFeature: agregarPopupNodos
 			}).setStyle({
-				color: "#ff3eb2",
-				fillOpacity: 0.30
+				color: "#f38100",
+				fillOpacity: 0.40
 			}),
- */
+
+			polosPropuesta= L.geoJson(PolosPropuestos, {
+				onEachFeature: agregarPopupPolos
+			}).setStyle({
+				color: "#76ca53",
+				fillOpacity: 0.50
+			}),
+
+
 			tic = L.geoJson(TIC, {
 				onEachFeature: agregarPopupfarmacias
 			}).setStyle({
@@ -741,7 +756,7 @@
 				"Zonificación (Ordenanza Nº 4947/03)": zonificacion,
 			},
 
-			"NODOS GRADO 1 - POLOS URBANOS":{
+			"NODOS GRADO 1":{
 				"Centro": nodosCentro1,
 				"Trapiche": nodosTrapiche1,
 				"Parque TIC": tic,
@@ -755,6 +770,11 @@
 				"Villa Marini": nodosMarini2,
 				"Villa del Parque": nodosParque2,
 				"Las Tortugas": nodosTortugas2,
+			},
+
+			"PROPUESTAS PARA LA PLANIFICACIÓN":{
+				"Nodos de Grado 2 a potenciar": nodosPropuesta,
+				"Polos de Actividades a potenciar": polosPropuesta,
 			},
 
 			"CAMINABILIDAD":{
@@ -794,6 +814,7 @@
 			},
 
 			"CULTURA": {
+				"Espacios Multiculturales": arizu,
 				"Bibliotecas": biblio,
 				"Museos": muse,
 				"Teatros": teatr,
