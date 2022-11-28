@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-
 h1{
     font-family: 'Playfair Display', serif;
+    font-size: 22px;
     color: #800080;
     width: 90%;
     height: auto;
@@ -68,6 +68,15 @@ h1{
 }
 
 @media (min-width:750px){
+
+    .leaflet-container {
+        font-size: 10px;
+    }
+
+    h1{
+        font-size: 24px;
+
+    } 
     .logogc {
         visibility: visible;
         position: absolute;
@@ -97,6 +106,14 @@ h1{
 }
 
 @media (min-width:1024px){
+
+    .leaflet-container {
+        font-size: 12px;
+    }
+
+    h1{
+        font-size: 32px;
+    }
     .logogc {
         visibility: visible;
         position: absolute;
@@ -127,6 +144,14 @@ h1{
 
 @media (min-width:1366px){
 
+    .leaflet-container {
+        font-size: 12px;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+
     .logogc {
         visibility: visible;
         position: absolute;
@@ -156,8 +181,14 @@ h1{
 }
 
 @media (min-width:1920px){
+
+    .leaflet-container {
+        font-size: 12px;
+    }
+
     h1{
         font-family: 'Playfair Display', serif;
+        font-size: 32px;
         color: #800080;
         width: 90%;
         height: auto;
