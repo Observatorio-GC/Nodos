@@ -4,8 +4,8 @@ map.on('overlayadd', onOverlayAdd);
 map.on('overlayremove', onOverlayRemove);
 L.control.scale().addTo(map);
 L.control.polylineMeasure().addTo(map);
-L.streetView({ position: 'topleft' }).addTo(map);
-L.streetView1({ position: 'topleft' }).addTo(map);
+/* L.streetView({ position: 'topleft' }).addTo(map);
+L.streetView1({ position: 'topleft' }).addTo(map); */
 
 
 /* IMPRESIÓN DE PANTALLA */
@@ -66,11 +66,11 @@ window.addEventListener('load', function () {
 
 
 /* COORDENADAS CLICK MOUSE */
-  var c = new L.Control.Coordinates();
+/*   var c = new L.Control.Coordinates();
 c.addTo(map);
     function onMapClick(e) {
        c.setCoordinates(e);
-    }map.on('click', onMapClick);
+    }map.on('click', onMapClick); */
 
 
 /* TEXTOS CICLOVIAS */
