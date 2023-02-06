@@ -205,6 +205,12 @@ function agregarPopupGastronomia2(feature, layer) {
     }
 }
 
+function agregarPopupCaminabilidad(feature, layer) {
+    if (feature.properties && feature.properties.Name) {
+        layer.bindPopup("<strong>" + feature.properties.Name + "</strong><br/>" + feature.properties.descriptio + "</strong><br/>");
+    }
+}
+
 function estiloDistritosDepartamentales() {
     Depa.eachLayer(function (featureInstanceLayer) {
         var id_feature = featureInstanceLayer.feature.properties['qc_id'];
@@ -401,16 +407,19 @@ function estilosendero() {
     });
 }
 
-function estiloindice() {
-    indice.eachLayer(function (featureInstanceLayer) {
+
+function estilocaminabilidad() {
+    traza.eachLayer(function (featureInstanceLayer) {
         var id_feature = featureInstanceLayer.feature.properties['PROMEDIO_P'];
         if (id_feature == 1) {
-            color_actual = '#f2301b';
-        } else if (id_feature == 2) {
-            color_actual = '#ff9e27';
-        } else if (id_feature == 3) {
-            color_actual = '#f3d809';
-        }
+            color_actual = '#e31a1c';
+        }else if (id_feature == 2) {
+            color_actual = '#ff7f00';
+        }else if (id_feature == 3) {
+            color_actual = '#fbeb09';
+        }else if (id_feature == 4) {
+            color_actual = '#16b934';
+        }				
         featureInstanceLayer.setStyle({
             color: color_actual, fillOpacity: 1, weight: 5
         });
